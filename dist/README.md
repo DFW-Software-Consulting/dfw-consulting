@@ -1,0 +1,1 @@
+This is the distribution folder that contains the .js files and architecture.
