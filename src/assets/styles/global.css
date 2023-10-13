@@ -1,3 +1,60 @@
 /*
 all global styles here
 */
+
+#wrapper {
+    /* define wrapper to be of type grid */
+    display: grid;
+    /* define the wrapper height to be size of view */
+    height: 100vh;
+}
+
+/* test code */
+#wrapper>* {
+    border: 1px dotted black;
+}
+
+/* anomalous devices */
+@media (max-width: 359px) {
+    #wrapper {
+        /* create 1 column for wrapper */
+        grid-template-columns: 1fr;
+        /* create 5 equal-sized rows for wrapper */
+        grid-template-rows: repeat(5, 1fr);
+        /* define gutter space between cells to be 12px */
+        gap: 12px;
+    }
+}
+
+/* mobile device */
+@media (min-width: 360px) {
+    #wrapper {
+        /* create 1 column for wrapper */
+        grid-template-columns: 1fr;
+        /* create 5 equal-sized rows for wrapper */
+        grid-template-rows: repeat(5, 1fr);
+        /* define gutter space between cells to be 16px */
+        gap: 16px;
+    }
+}
+
+/* tablet */
+@media (min-width: 768px) {
+    #wrapper {
+        /* create 3 equal-sized columns for wrapper */
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        /* define gutter space between cells to be 32px */
+        gap: 32px;
+    }
+}
+
+/* desktop */
+@media (min-width: 1280px) {
+    #wrapper {
+        /* create 6 equal-sized columns for wrapper */
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        gap: 32px;
+    }
+}
