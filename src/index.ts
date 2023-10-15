@@ -1,14 +1,12 @@
-/*
-import react
-import reactdom
-import browser router
-import app from ./containers to avoid circular dependencies
-import global styles
+import React from 'react';
+import ReactDOM from 'react-dom/client'
+import { BrowserRouter, BrowserRouterProps } from 'react-router-dom';
+import { App } from './containers';
+import './assets/stles/global.css';
 
-const root = reactdom.createroot(...)
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <browserrouter>
-        <app />
-    </browserrouter>
-)
-*/
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>
+);
