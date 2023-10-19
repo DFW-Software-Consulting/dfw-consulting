@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter, BrowserRouterProps } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { App } from './containers';
 import './assets/stles/global.css';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-    <BrowserRouter>
-        <App />
-    </BrowserRouter>
-);
+const rootElement = document.getElementById('root');
+if (rootElement) {
+    let root = ReactDOM.createRoot(rootElement);
+    root.render(
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    );
+};
