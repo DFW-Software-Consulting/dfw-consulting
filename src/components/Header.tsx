@@ -1,10 +1,11 @@
-/*
-import react
+import React from 'react';
 
-export default function Header() {
+const Header = () => {
+
     return (
         <>
         </>
     )
 }
-*/
+
+export default Header;
