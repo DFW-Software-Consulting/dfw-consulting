@@ -1,0 +1,6 @@
+#footer {
+    /* test background color */
+    background-color: cornsilk; 
+    grid-row: 5;
+    grid-column: 1 / span 3;
+}
