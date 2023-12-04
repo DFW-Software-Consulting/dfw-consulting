@@ -1,60 +1,91 @@
 /*
 all global styles here
 */
+/* grid-template-rows: repeat(12, minmax(calc(100vh / 12), 1fr)) 1fr; */
+
+/* define global variables */
+:root {
+    --cols359: 1;
+    --cols360: 1;
+    --cols768: 3;
+    --cols1280: 6;
+}
 
 #wrapper {
     /* define wrapper to be of type grid */
     display: grid;
-    /* define the wrapper height to be size of view */
-    height: 100vh;
+    /* define the wrapper's width to be 100% of the view's width */
+    min-width: 100vw;
+    /* define the wrapper's height to be 100% of the view's height */
+    min-height: 100vh;
+    box-sizing: border-box;
+    /* create 1 column to make header, footer, and main the same horizontal size so neither sticks out over the other */
+    grid-template-columns: repeat(1, 1fr);
+}
+
+#main {
+    /* define main to be of type grid */
+    display: grid;
+    /* define the main height to be size of space within parent grid */
+    min-height: 100%;
+    /* allow overflow in vertical direction to be handled automatically */
+    overflow-y: auto;
 }
 
 /* test code */
-#wrapper>* {
+/* #main>* {
     border: 1px dotted black;
-}
+} */
 
 /* anomalous devices */
 @media (max-width: 359px) {
-    #wrapper {
+    #main {
         /* create 1 column for wrapper */
-        grid-template-columns: 1fr;
-        /* create 5 equal-sized rows for wrapper */
-        grid-template-rows: repeat(5, 1fr);
+        grid-template-columns: repeat(var(--cols359), 1fr);
+        /* create 12 equal-sized rows for wrapper */
+        grid-template-rows: repeat(12, 1fr);
         /* define gutter space between cells to be 12px */
         gap: 12px;
+        padding: 0px 24px;
+        background-color: blue;
     }
 }
 
 /* mobile device */
 @media (min-width: 360px) {
-    #wrapper {
+    #main {
         /* create 1 column for wrapper */
-        grid-template-columns: 1fr;
-        /* create 5 equal-sized rows for wrapper */
-        grid-template-rows: repeat(5, 1fr);
+        grid-template-columns: repeat(var(--cols360), 1fr);
+        /* create 12 equal-sized rows for wrapper */
+        grid-template-rows: repeat(12, 1fr);
         /* define gutter space between cells to be 16px */
         gap: 16px;
+        padding: 0px 32px;
+        /* background-color: green; */
     }
 }
 
 /* tablet */
 @media (min-width: 768px) {
-    #wrapper {
+    #main {
         /* create 3 equal-sized columns for wrapper */
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(5, 1fr);
+        grid-template-columns: repeat(var(--cols768), 1fr);
+        grid-template-rows: repeat(12, 1fr);
         /* define gutter space between cells to be 32px */
         gap: 32px;
+        padding: 0px 64px;
+        background-color: yellow;
     }
 }
 
 /* desktop */
 @media (min-width: 1280px) {
-    #wrapper {
+    #main {
         /* create 6 equal-sized columns for wrapper */
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: repeat(5, 1fr);
+        grid-template-columns: repeat(var(--cols1280), 1fr);
+        grid-template-rows: repeat(12, 1fr);
         gap: 32px;
+        padding: 0px 64px;
+        background-color: red;
     }
 }
