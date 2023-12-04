@@ -18,7 +18,7 @@ const Header = () => {
                 <div id="header-right">
                     <div id="tab-home">Home</div>
                     <div id="tab-about">About</div>
-                    <div id="tab-contact">Contact</div>
+                    <div id="tab-team">Team</div>
                 </div>
             </div>
         </>
