@@ -5,7 +5,7 @@ const Footer = () => {
 
     return (
         <>
-            <div id="footer">Footer!</div>
+            <div id="footer">Copyright © 2023 DFW Consulting</div>
         </>
     )
 }
