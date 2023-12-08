@@ -1,0 +1,32 @@
+
+/* desktop */
+@media (width >= 1280px) {
+    .paragraphCard {
+        grid-column: span var(--deskCols);
+        background-color: red;
+    }
+}
+
+/* tablet */
+@media (width < 1280px) {
+    .paragraphCard {
+        grid-column: span var(--tabletCols);
+        background-color: yellow;
+    }
+}
+
+/* mobile device */
+@media (width < 768px) {
+    .paragraphCard {
+        grid-column: span var(--mobileCols);
+        background-color: green;
+    }
+}
+
+/* anomalous devices */
+@media (width < 360px) {
+    .paragraphCard {
+        grid-column: span var(--anomCols);
+        background-color: blue;
+    }
+}
