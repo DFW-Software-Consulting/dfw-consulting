@@ -1,7 +1,11 @@
+// imports
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../assets/styles/header.css';
 
 const Header = () => {
+    // variables
+    const navigate = useNavigate();
 
     return (
         <>
@@ -16,9 +20,27 @@ const Header = () => {
                     </div>
                 </div>
                 <div id="header-right">
-                    <div id="tab-home">Home</div>
-                    <div id="tab-about">About</div>
-                    <div id="tab-team">Team</div>
+                    <div
+                        id="tab-home"
+                        onClick={(e) => {
+                            navigate('/Home')
+                        }}
+                        >Home
+                    </div>
+                    <div
+                        id="tab-about"
+                        onClick={(e) => {
+                            navigate('/About')
+                        }}
+                        >About
+                    </div>
+                    <div
+                        id="tab-team"
+                        onClick={(e) => {
+                            navigate('/Team')
+                        }}
+                        >Team
+                    </div>
                 </div>
             </div>
         </>
