@@ -5,13 +5,21 @@ all global styles here
 
 /* define global variables */
 :root {
-    --cols359: 1;
-    --cols360: 1;
-    --cols768: 3;
-    --cols1280: 6;
+    /* grid column numbers */
+    --anomCols: 1;
+    --mobileCols: 1;
+    --tabletCols: 3;
+    --deskCols: 6;
+
+    /* header font size*/
+    --anomHeaderFont: 16px;
+    --mobileHeaderFont: 20px;
+    --tabletHeaderFont: 24px;
+    --deskHeaderFont: 32px;
 }
 
 #wrapper {
+    background-color: purple;
     /* define wrapper to be of type grid */
     display: grid;
     /* define the wrapper's width to be 100% of the view's width */
@@ -26,51 +34,44 @@ all global styles here
 #main {
     /* define main to be of type grid */
     display: grid;
-    /* define the main height to be size of space within parent grid */
-    min-height: 100%;
+    /* define the main content area's height to be 100% of the view minus the heights of the header and footer combined */
+    min-height: calc(100vh - (6 * (var(--anomHeaderFont))));
     /* allow overflow in vertical direction to be handled automatically */
     overflow-y: auto;
+    border: 5px dotted greenyellow;
 }
 
-/* test code */
-/* #main>* {
-    border: 1px dotted black;
-} */
-
-/* anomalous devices */
-@media (max-width: 359px) {
-    #main {
-        /* create 1 column for wrapper */
-        grid-template-columns: repeat(var(--cols359), 1fr);
-        /* create 12 equal-sized rows for wrapper */
-        grid-template-rows: repeat(12, 1fr);
-        /* define gutter space between cells to be 12px */
-        gap: 12px;
-        padding: 0px 24px;
-        background-color: blue;
-    }
+.paragraphCard {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.5em;
+    text-align: left;
+    padding: 1em;
 }
 
-/* mobile device */
-@media (min-width: 360px) {
+#main>* {
+    border: 2px dotted black;
+}
+
+/* desktop */
+@media (width >= 1280px) {
     #main {
-        /* create 1 column for wrapper */
-        grid-template-columns: repeat(var(--cols360), 1fr);
-        /* create 12 equal-sized rows for wrapper */
-        grid-template-rows: repeat(12, 1fr);
-        /* define gutter space between cells to be 16px */
-        gap: 16px;
-        padding: 0px 32px;
-        /* background-color: green; */
+        min-height: calc(100vh - (3 * var(--deskHeaderFont) + 3 * var(--anomHeaderFont)));
+        /* create 6 equal-sized columns for wrapper */
+        grid-template-columns: repeat(var(--deskCols), 1fr);
+        grid-template-rows: repeat(6, auto);
+        gap: 32px;
+        padding: 0px 64px;
+        background-color: red;
     }
 }
 
 /* tablet */
-@media (min-width: 768px) {
+@media (width < 1280px) {
     #main {
-        /* create 3 equal-sized columns for wrapper */
-        grid-template-columns: repeat(var(--cols768), 1fr);
-        grid-template-rows: repeat(12, 1fr);
+        min-height: calc(100vh - (3 * var(--tabletHeaderFont) + 3 * var(--anomHeaderFont)));
+        /* create 3 equal-sized columns for main */
+        grid-template-columns: repeat(var(--tabletCols), 1fr);
+        grid-template-rows: repeat(6, auto);
         /* define gutter space between cells to be 32px */
         gap: 32px;
         padding: 0px 64px;
@@ -78,14 +79,31 @@ all global styles here
     }
 }
 
-/* desktop */
-@media (min-width: 1280px) {
+/* mobile device */
+@media (width < 768px) {
     #main {
-        /* create 6 equal-sized columns for wrapper */
-        grid-template-columns: repeat(var(--cols1280), 1fr);
-        grid-template-rows: repeat(12, 1fr);
-        gap: 32px;
-        padding: 0px 64px;
-        background-color: red;
+        min-height: calc(100vh - (3 * var(--mobileHeaderFont) + 3 * var(--anomHeaderFont)));
+        /* create 1 column for main */
+        grid-template-columns: repeat(var(--mobileCols), 1fr);
+        /* create 12 equal-sized rows for wrapper */
+        grid-template-rows: repeat(6, auto);
+        /* define gutter space between cells to be 16px */
+        gap: 16px;
+        padding: 0px 32px;
+        background-color: green;
+    }
+}
+
+/* anomalous devices */
+@media (width < 360px) {
+    #main {
+        /* create 1 column for wrapper */
+        grid-template-columns: repeat(var(--anomCols), 1fr);
+        /* create 12 equal-sized rows for wrapper */
+        grid-template-rows: repeat(6, auto);
+        /* define gutter space between cells to be 12px */
+        gap: 12px;
+        padding: 0px 24px;
+        background-color: blue;
     }
 }
