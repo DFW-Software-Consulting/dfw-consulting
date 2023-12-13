@@ -6,20 +6,22 @@ all global styles here
 /* define global variables */
 :root {
     /* grid column numbers */
-    --anomCols: 1;
-    --mobileCols: 1;
-    --tabletCols: 3;
-    --deskCols: 6;
+    --anomCols: 5;
+    --mobileCols: 5;
+    --tabletCols: 5;
+    --deskCols: 5;
 
     /* header font size*/
-    --anomHeaderFont: 16px;
-    --mobileHeaderFont: 20px;
-    --tabletHeaderFont: 24px;
+    --anomHeaderFont: 12px;
+    --mobileHeaderFont: 16px;
+    --tabletHeaderFont: 20px;
     --deskHeaderFont: 32px;
 }
 
 #wrapper {
-    background-color: purple;
+    /* background-color: #D9E0E9; */
+    /* background-color: #7A8DA9; */
+    background-color: #7A8DA9;
     /* define wrapper to be of type grid */
     display: grid;
     /* define the wrapper's width to be 100% of the view's width */
@@ -29,6 +31,7 @@ all global styles here
     box-sizing: border-box;
     /* create 1 column to make header, footer, and main the same horizontal size so neither sticks out over the other */
     grid-template-columns: repeat(1, 1fr);
+    border-radius: .5em .1em .5em .5em;
 }
 
 #main {
@@ -38,18 +41,13 @@ all global styles here
     min-height: calc(100vh - (6 * (var(--anomHeaderFont))));
     /* allow overflow in vertical direction to be handled automatically */
     overflow-y: auto;
-    border: 5px dotted greenyellow;
+    background-color: inherit;
 }
 
 .paragraphCard {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     line-height: 1.5em;
     text-align: left;
     padding: 1em;
-}
-
-#main>* {
-    border: 2px dotted black;
 }
 
 /* desktop */
@@ -61,7 +59,6 @@ all global styles here
         grid-template-rows: repeat(6, auto);
         gap: 32px;
         padding: 0px 64px;
-        background-color: red;
     }
 }
 
@@ -75,7 +72,6 @@ all global styles here
         /* define gutter space between cells to be 32px */
         gap: 32px;
         padding: 0px 64px;
-        background-color: yellow;
     }
 }
 
@@ -90,7 +86,6 @@ all global styles here
         /* define gutter space between cells to be 16px */
         gap: 16px;
         padding: 0px 32px;
-        background-color: green;
     }
 }
 
@@ -104,6 +99,5 @@ all global styles here
         /* define gutter space between cells to be 12px */
         gap: 12px;
         padding: 0px 24px;
-        background-color: blue;
     }
 }
