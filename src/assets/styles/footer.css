@@ -1,7 +1,10 @@
 #footer-wrapper {
-    box-sizing: border-box;
+    background-color: #ABB8CC;
     border: 1px solid black;
+    border-radius: .5em .1em .5em .5em;
+    min-height: fit-content;
     height: 3em;
+    box-shadow: 2px -2px 4px #314B73;
     font-size: var(--anomHeaderFont); 
 }
 
@@ -11,14 +14,14 @@
     justify-content: center;
     align-items: center;
     min-height: 100%;
+    color: white;
+    text-shadow: 1px 1px 2px #314B73;
 }
 
 /* desktop */
 @media (width >= 1280px) {
     #footer-wrapper {
         grid-column: span var(--deskCols);
-        background-color: red;
-        /* font-size: var(--deskHeaderFont); */
     }
 }
 
@@ -26,8 +29,6 @@
 @media (width < 1280px) {
     #footer-wrapper {
         grid-column: span var(--tabletCols);
-        background-color: yellow;
-        /* font-size: var(--tabletHeaderFont); */
     }
 }
 
@@ -35,8 +36,6 @@
 @media (width < 768px) {
     #footer-wrapper {
         grid-column: span var(--mobileCols);
-        background-color: green;
-        /* font-size: var(--mobileHeaderFont); */
     }
 }
 
@@ -44,7 +43,5 @@
 @media (width < 360px) {
     #footer-wrapper {
         grid-column: span var(--anomCols);
-        background-color: blue;
-        /* font-size: var(--anomHeaderFont); */
     }
 }
