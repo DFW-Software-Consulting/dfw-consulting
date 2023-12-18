@@ -1,25 +1,33 @@
 import React from 'react';
 import { useEffect } from 'react';
+import {
+    stafferOne,
+    stafferTwo,
+    stafferThree,
+    stafferFour,
+    stafferFive,
+    stafferSix
+} from '../assets/images';
 import '../assets/styles/team.css'
 
 const Team = () => {
 
     useEffect(() => {
         function addAnimation() {
-            const scrollers: NodeListOf<Element> = document.querySelectorAll(".team-skills");
+            const scrollerWrappers: NodeListOf<Element> = document.querySelectorAll(".scroller-wrapper");
             
-            scrollers.forEach((scroller) => {
-                const targetScroller: HTMLElement | null = scroller.querySelector(".scroller");
+            scrollerWrappers.forEach((scrollerWrapper) => {
+                const scroller: HTMLElement | null = scrollerWrapper.querySelector(".scroller");
             
-                if (targetScroller) {
-                    const scrollerContent = Array.from(targetScroller.children);
+                if (scroller) {
+                    const scrollerContent = Array.from(scroller.children);
                     
                     scrollerContent.forEach((item) => {
                         const duplicatedItem = item.cloneNode(true);
                         
-                        if (targetScroller instanceof HTMLElement) {
+                        if (scroller instanceof HTMLElement) {
                             const duplicatedElement = duplicatedItem as Element;
-                            targetScroller.appendChild(duplicatedElement);
+                            scroller.appendChild(duplicatedElement);
                         }
                     });
                 }
@@ -32,8 +40,11 @@ const Team = () => {
 
     return (
         <>
-            <div className="team-skills">
-                <div className="scroller">
+            <div className="page-title">
+                <div className="page-title-inner">dfw.team</div>
+            </div>
+            <div className="scroller-wrapper">
+                <div className="left scroller">
                     <div className="skill-card">Bootstrap</div>
                     <div className="skill-card">CSS3</div>
                     <div className="skill-card">Express</div>
@@ -52,6 +63,40 @@ const Team = () => {
                     <div className="skill-card">Web API</div>
                     <div className="skill-card">Webpack</div>
                     <div className="skill-card">YAML</div>
+                </div>
+            </div>
+            <div className="scroller-wrapper">
+                <div className="right scroller">
+                    <img
+                            className="photo"
+                            src={stafferOne}
+                            alt="staffer1"
+                    />
+                    <img
+                            className="photo"
+                            src={stafferTwo}
+                            alt="staffer2"
+                    />
+                    <img
+                            className="photo"
+                            src={stafferThree}
+                            alt="staffer3"
+                    />
+                    <img
+                            className="photo"
+                            src={stafferFour}
+                            alt="staffer4"
+                    />
+                    <img
+                            className="photo"
+                            src={stafferFive}
+                            alt="staffer5"
+                    />
+                    <img
+                            className="photo"
+                            src={stafferSix}
+                            alt="staffer6"
+                    />
                 </div>
             </div>
         </>
