@@ -1,10 +1,6 @@
 #footer-wrapper {
-    background-color: #ABB8CC;
-    border: 1px solid black;
-    border-radius: .5em .1em .5em .5em;
     min-height: fit-content;
     height: 3em;
-    box-shadow: 2px -2px 4px #314B73;
     font-size: var(--anomHeaderFont); 
 }
 
@@ -14,8 +10,7 @@
     justify-content: center;
     align-items: center;
     min-height: 100%;
-    color: white;
-    text-shadow: 1px 1px 2px #314B73;
+    color: #546C8F;
 }
 
 /* desktop */
