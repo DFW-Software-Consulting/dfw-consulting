@@ -1,28 +1,28 @@
 
 /* desktop */
 @media (width >= 1280px) {
-    .paragraphCard {
+    .paragraph-card {
         grid-column: span var(--deskCols);
     }
 }
 
 /* tablet */
 @media (width < 1280px) {
-    .paragraphCard {
+    .paragraph-card {
         grid-column: span var(--tabletCols);
     }
 }
 
 /* mobile device */
 @media (width < 768px) {
-    .paragraphCard {
+    .paragraph-card {
         grid-column: span var(--mobileCols);
     }
 }
 
 /* anomalous devices */
 @media (width < 360px) {
-    .paragraphCard {
+    .paragraph-card {
         grid-column: span var(--anomCols);
     }
 }

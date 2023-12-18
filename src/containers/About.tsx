@@ -5,7 +5,10 @@ const About = () => {
 
     return (
         <>
-            <div className="paragraphCard">
+            <div className="page-title">
+                <div className="page-title-inner">dfw.about</div>
+            </div>
+            <div className="paragraph-card">
                 We're a cutting-edge software consultancy at the forefront of the digital landscape. Born as a startup fueled by passion for technology, we've evolved into a powerhouse of innovation and expertise in software engineering.
                 <p />
                 Our mission? To empower businesses with top-tier consultancy services, harnessing the latest technologies and conventions to craft seamless solutions that redefine industry standards. From robust backend architectures to sleek and intuitive frontend designs, we specialize in a full spectrum of software services.
