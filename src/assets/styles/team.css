@@ -1,4 +1,4 @@
-.team-skills {
+.scroller-wrapper {
     overflow-x: hidden;
     padding: 1em 0;
     grid-column: 2 / 5;
@@ -15,7 +15,14 @@
     gap: 1rem;
     width: max-content;
     flex-wrap: nowrap;
-    animation: scroller 50s forwards linear infinite;
+}
+
+.left {
+    animation: slide 60s forwards linear infinite;
+}
+
+.right {
+    animation: slide 80s reverse linear infinite;
 }
 
 .skill-card {
@@ -36,7 +43,13 @@
     user-select: none;
 }
 
-@keyframes scroller {
+.photo {
+    padding: .5em;
+    height: 5em;
+    max-width: 5em;
+}
+
+@keyframes slide {
     to {
         transform: translate(calc(-50% - .5rem));
     }
