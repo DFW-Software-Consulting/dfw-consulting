@@ -1,8 +1,25 @@
+.card-paper {
+    background-color: #f3f3f3;
+}
+
+.paragraph-card {
+    box-shadow: 2px 2px 3px #314B73;
+    border-radius: 10px;
+    padding: 1em;
+    position: relative;
+}
 
 /* desktop */
 @media (width >= 1280px) {
     .paragraph-card {
         grid-column: span var(--deskCols);
+    }
+    #ribbon {
+        position:absolute;
+        max-width: 160px;
+        max-height: 320px;
+        top: -5vh;
+        right: -5vw;
     }
 }
 
@@ -11,12 +28,26 @@
     .paragraph-card {
         grid-column: span var(--tabletCols);
     }
+    #ribbon {
+        position:absolute;
+        max-width: 120px;
+        max-height: 240px;
+        top: -5vh;
+        right: -5vw;
+    }
 }
 
 /* mobile device */
 @media (width < 768px) {
     .paragraph-card {
         grid-column: span var(--mobileCols);
+    }
+    #ribbon {
+        position:absolute;
+        max-width: 90px;
+        max-height: 180px;
+        top: -5vh;
+        right: -8vw;
     }
 }
 
