@@ -1,119 +1,96 @@
 import React from 'react';
 import { useEffect } from 'react';
 import {
-    stafferOne,
-    stafferTwo,
-    stafferThree,
-    stafferFour,
-    stafferFive,
-    stafferSix
+    stafferAshley,
+    stafferTwo
 } from '../assets/images';
 import '../assets/styles/team.css'
 
 const Team = () => {
 
     useEffect(() => {
-        function addAnimation() {
-            const scrollerWrappers: NodeListOf<Element> = document.querySelectorAll(".scroller-wrapper");
-            
-            scrollerWrappers.forEach((scrollerWrapper) => {
-                const scroller: HTMLElement | null = scrollerWrapper.querySelector(".scroller");
-            
-                if (scroller) {
-                    const scrollerContent = Array.from(scroller.children);
-                    
-                    scrollerContent.forEach((item) => {
-                        const duplicatedItem = item.cloneNode(true);
-                        
-                        if (scroller instanceof HTMLElement) {
-                            const duplicatedElement = duplicatedItem as Element;
-                            scroller.appendChild(duplicatedElement);
-                        }
-                    });
-                }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                };
             });
-        };
-        /* IIFE not used to avoid progressively duplicated elements
-        and inadvertently faster scrolling */
-        addAnimation();
-    },[])
+        }, { threshold: .55 });
+    
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((element) => observer.observe(element));
+    },[]);
 
     return (
         <>
-            <div className="page-title">
-                <div className="page-title-inner">dfw.team</div>
-            </div>
-            <div className="scroller-wrapper">
-                <div className="left scroller">
-                    <div className="skill-card">Bootstrap</div>
-                    <div className="skill-card">CSS3</div>
-                    <div className="skill-card">Express</div>
-                    <div className="skill-card">HTML5</div>
-                    <div className="skill-card">Java</div>
-                    <div className="skill-card">JavaScript</div>
-                    <div className="skill-card">Next.js</div>
-                    <div className="skill-card">Node</div>
-                    <div className="skill-card">PostgreSQL</div>
-                    <div className="skill-card">Python</div>
-                    <div className="skill-card">React</div>
-                    <div className="skill-card">Redux</div>
-                    <div className="skill-card">REST API</div>
-                    <div className="skill-card">Tailwind</div>
-                    <div className="skill-card">TypeScript</div>
-                    <div className="skill-card">Web API</div>
-                    <div className="skill-card">Webpack</div>
-                    <div className="skill-card">YAML</div>
+            <div className="hidden photo">
+                <img
+                        src={stafferAshley}
+                        alt="Jeremy Ashley"
+                />
+                <div className="photo-text">
+                    <h1>Jeremy Ashley</h1>
+                    <h2>React JS Developer</h2>
                 </div>
             </div>
-            <div className="scroller-wrapper">
-                <div className="right scroller">
-                    <img
-                            className="photo"
-                            src={stafferOne}
-                            alt="staffer1"
-                    />
-                    <img
-                            className="photo"
-                            src={stafferTwo}
-                            alt="staffer2"
-                    />
-                    <img
-                            className="photo"
-                            src={stafferThree}
-                            alt="staffer3"
-                    />
-                    <img
-                            className="photo"
-                            src={stafferFour}
-                            alt="staffer4"
-                    />
-                    <img
-                            className="photo"
-                            src={stafferFive}
-                            alt="staffer5"
-                    />
-                    <img
-                            className="photo"
-                            src={stafferSix}
-                            alt="staffer6"
-                    />
+            <div className="hidden quote-card">"Crafting digital narratives that resonate."</div>
+            <div className="hidden photo">
+                <img
+                        src={stafferTwo}
+                        alt="staffer2"
+                />
+                <div className="photo-text">
+                    <h1>Bryce Malmberg</h1>
+                    <h2>Full-stack Developer</h2>
                 </div>
             </div>
+            <div className="hidden quote-card">"Software development has been a lifelong passion of mine."</div>
+            {/* <div className="hidden photo">
+                <img
+                        src={stafferThree}
+                        alt="staffer3"
+                />
+                <div className="photo-text">
+                    <h1>Robert Burski</h1>
+                    <h2>Scrum Master</h2>
+                </div>
+            </div>
+            <div className="hidden quote-card">"Bridging code and strategy with a lifetime of project management finesse and Agile expertise."</div>
+            <div className="hidden photo">
+                <img
+                        src={stafferFour}
+                        alt="staffer4"
+                />
+                <div className="photo-text">
+                    <h1>Bailey Read</h1>
+                    <h2>Front-end Developer II</h2>
+                </div>
+            </div>
+            <div className="hidden quote-card">"Software superheroine on a mission to redefine tech boundaries."</div>
+            <div className="hidden photo">
+                <img
+                        src={stafferFive}
+                        alt="staffer5"
+                />
+                <div className="photo-text">
+                    <h1>Alex Trevino</h1>
+                    <h2>Back-end Engineer I</h2>
+                </div>
+            </div>
+            <div className="hidden quote-card">"Building bridges between imagination and implementation through tech wizardry."</div>
+            <div className="hidden photo">
+                <img
+                        src={stafferSix}
+                        alt="staffer6"
+                />
+                <div className="photo-text">
+                    <h1>Rich Reynolds</h1>
+                    <h2>Back-end Engineer II</h2>
+                </div>
+            </div>
+            <div className="hidden quote-card">"Veteran in back-end engineering; sculpting databases and orchestrating APIs for scalable solutions."</div> */}
         </>
     )
 }
 
 export default Team;
-
-/*
-    include in this page photos of teammembers, both real
-    and fake, and include a description below two scrollers
-    of the team, including 22 years of experience
-
-    - get the photos from myself, owner, and website for
-    generating fake people
-    - have chatgpt generate the description of the team.
-    include: 22 years experience, front-end, back-end,
-    past companies worked for, tireless, diligent,
-    team of professionals, generate some more buzz words
-*/
