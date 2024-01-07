@@ -1,7 +1,6 @@
 /*
-all global styles here
+    all global styles here
 */
-/* grid-template-rows: repeat(12, minmax(calc(100vh / 12), 1fr)) 1fr; */
 
 /* define global variables */
 :root {
@@ -16,11 +15,20 @@ all global styles here
     --mobileHeaderFont: 16px;
     --tabletHeaderFont: 24px;
     --deskHeaderFont: 32px;
+
+    /* main content font size */
+    --anomContentFont: 16px; 
+    --mobileContentFont: 24px;
+    --tabletContentFont: 18px;
+    --deskContentFont: 24px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
 }
 
 #wrapper {
-    /* background-color: #D9E0E9; */
-    /* background-color: #7A8DA9; */
     background-color: white;
     /* define wrapper to be of type grid */
     display: grid;
@@ -31,17 +39,42 @@ all global styles here
     box-sizing: border-box;
     /* create 1 column to make header, footer, and main the same horizontal size so neither sticks out over the other */
     grid-template-columns: repeat(1, 1fr);
-    border-radius: .5em .1em .5em .5em;
 }
+
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1),rgba(255, 255, 255, 1)), url(../images/hero.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    grid-column: span 5;
+    grid-row: span 6;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    color: white;
+    text-shadow: 2px 2px 6px black;
+ }
+
+ .hero .hero-title {
+    font-size: 64px;
+ }
+ .hero .hero-quote {
+    font-size: 24px;
+ }
 
 #main {
     /* define main to be of type grid */
     display: grid;
     /* define the main content area's height to be 100% of the view minus the heights of the header and footer combined */
-    min-height: calc(100vh - (6 * (var(--anomHeaderFont))));
-    /* allow overflow in vertical direction to be handled automatically */
-    overflow-y: auto;
-    background-color: inherit;
+    min-height: calc(100vh - (3 * (var(--anomHeaderFont))));
+    margin-top: calc(5 * var(--anomHeaderFont));
+    overflow-y: hidden;
+    background-color: white;
 }
 
 .paragraph-card {
@@ -62,19 +95,29 @@ all global styles here
     transform: translateX(calc(50% - 3em));
 }
 
+.hidden {
+    opacity: 0;
+    transform: translateY(10%);
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* desktop */
 @media (width >= 1280px) {
     #main {
         min-height: calc(100vh - (3 * var(--deskHeaderFont) + 3 * var(--anomHeaderFont)));
-        /* create 6 equal-sized columns for wrapper */
+        /* create 5 equal-sized columns for main */
         grid-template-columns: repeat(var(--deskCols), 1fr);
         grid-template-rows: repeat(6, auto);
         gap: 32px;
-        padding: 0px 64px;
-    }
-    .page-title {
-        grid-column: span var(--deskCols);
-        font-size: var(--deskHeaderFont);
+        padding-left: 64px;
+        padding-right: 64px;
+        padding-top: 64px;
+        font-size: var(--deskContentFont);
     }
 }
 
@@ -82,16 +125,15 @@ all global styles here
 @media (width < 1280px) {
     #main {
         min-height: calc(100vh - (3 * var(--tabletHeaderFont) + 3 * var(--anomHeaderFont)));
-        /* create 3 equal-sized columns for main */
+        /* create 5 columns for main */
         grid-template-columns: repeat(var(--tabletCols), 1fr);
         grid-template-rows: repeat(6, auto);
         /* define gutter space between cells to be 32px */
         gap: 32px;
-        padding: 0px 64px;
-    }
-    .page-title {
-        grid-column: span var(--tabletCols);
-        font-size: var(--tabletHeaderFont);
+        padding-left: 64px;
+        padding-right: 64px;
+        padding-top: 64px;
+        font-size: var(--tabletContentFont);
     }
 }
 
@@ -99,33 +141,31 @@ all global styles here
 @media (width < 768px) {
     #main {
         min-height: calc(100vh - (3 * var(--mobileHeaderFont) + 3 * var(--anomHeaderFont)));
-        /* create 1 column for main */
+        /* create 5 columns for main */
         grid-template-columns: repeat(var(--mobileCols), 1fr);
-        /* create 12 equal-sized rows for wrapper */
+        /* create 6 equal-sized rows for wrapper */
         grid-template-rows: repeat(6, auto);
         /* define gutter space between cells to be 16px */
         gap: 16px;
-        padding: 0px 32px;
-    }
-    .page-title {
-        grid-column: span var(--mobileCols);
-        font-size: var(--mobileHeaderFont);
+        padding-left: 32px;
+        padding-right: 32px;
+        padding-top: 32px;
+        font-size: var(--mobileContentFont);
     }
 }
 
 /* anomalous devices */
 @media (width < 360px) {
     #main {
-        /* create 1 column for wrapper */
+        /* create 1 column for main content */
         grid-template-columns: repeat(var(--anomCols), 1fr);
-        /* create 12 equal-sized rows for wrapper */
+        /* create 6 equal-sized rows for main content */
         grid-template-rows: repeat(6, auto);
         /* define gutter space between cells to be 12px */
         gap: 12px;
-        padding: 0px 24px;
-    }
-    .page-title {
-        grid-column: span var(--anomCols);
-        font-size: var(--anomHeaderFont);
+        padding-left: 24px;
+        padding-right: 24px;
+        padding-top: 24px;
+        font-size: var(--anomContentFont);
     }
 }
