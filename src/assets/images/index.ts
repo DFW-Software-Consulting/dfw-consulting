@@ -1,16 +1,17 @@
-import stafferOne from './staffer1.png';
 import stafferTwo from './staffer2.png';
-import stafferThree from './staffer3.png';
-import stafferFour from './staffer4.png';
-import stafferFive from './staffer5.png';
-import stafferSix from './staffer6.png';
-
+import stafferAshley from './stafferAshley.png'
+import homeImageOne from './backend.png';
+import homeImageTwo from './frontend.png';
+import homeImageThree from './cloudservices.png';
+import homeImageFour from './progressivewebapp.png';
+import aboutImageTwo from './ribbon.png';
 
 export {
-    stafferOne,
     stafferTwo,
-    stafferThree,
-    stafferFour,
-    stafferFive,
-    stafferSix
+    stafferAshley,
+    homeImageOne,
+    homeImageTwo,
+    homeImageThree,
+    homeImageFour,
+    aboutImageTwo
 };
