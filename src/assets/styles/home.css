@@ -1,24 +1,110 @@
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
 .left-card-small {
     grid-column: 1 / 3;
-    background-color: #ABB8CC;
-}
-
-.left-card-big {
-    grid-column: 1 / 4;
-    background-color: #ABB8CC;
-}
-
-.right-card-small {
-    grid-column: 4 / 6;
-    background-color: #546C8F;
+    display: flex;
 }
 
 .right-card-big {
     grid-column: 3 / 6;
-    background-color: #546C8F;
+    display: flex;
+    align-items: center;
+    box-shadow: 2px 2px 3px #314B73;
+    border-radius: 10px;
+}
+
+.left-card-big {
+    grid-column: 1 / 4;
+    display: flex;
+    align-items: center;
+    box-shadow: 2px 2px 3px #314B73;
+    border-radius: 10px;
+}
+
+.right-card-small {
+    grid-column: 4 / 6;
+    display: flex;
 }
 
 .content-card {
+    min-height: 25vh;
+    line-height: 1.5em;
+    padding: 1em;
+}
+
+.spanner-card {
     grid-column: span 5;
-    background-color: #314B73;
+    min-height: 15vh;
+    box-shadow: 2px 2px 3px #314B73;
+    border-radius: 10px;
+    margin-bottom: 1em;
+}
+
+@media (width > 1280px) {
+    .right-card-big, .left-card-big, .spanner-card {
+        box-shadow: none;
+    }
+}
+
+@media (width < 768px) {
+    .left-card-small {
+        grid-column: span 5;
+        display: flex;
+    }
+    
+    .right-card-big {
+        grid-column: span 5;
+        display: flex;
+        align-items: center;
+        box-shadow: none;
+    }
+    
+    .left-card-big {
+        grid-column: span 5;
+        display: flex;
+        align-items: center;
+        box-shadow: none;
+    }
+    
+    .right-card-small {
+        grid-column: span 5;
+        display: flex;
+    }
+
+    .spanner-card {
+        box-shadow: none;
+        background-color: #ABB8CC;
+        color: white;
+    }
+
+    .row-two-transition {
+        grid-row: 2;
+    }
+    .row-three-transition {
+        grid-row: 3;
+    }
+    .row-four-transition {
+        grid-row: 4;
+    }
+    .row-five-transition {
+        grid-row: 5;
+    }
+    .row-six-transition {
+        grid-row: 6;
+    }
+    .row-seven-transition {
+        grid-row: 7;
+    }
+    .row-eight-transition {
+        grid-row: 8;
+    }
+    .row-nine-transition {
+        grid-row: 9;
+    }
+    .row-ten-transition {
+        grid-row: 10;
+    }
 }
