@@ -35,9 +35,7 @@
   "description": "This is a Single Page Application website.",
   "scripts": {
     "dev:start": "webpack serve --config webpack.dev.js",
-    "dev:build": "webpack --config webpack.dev.js",
-    "build": "webpack --config ./webpack.config.js",
-    "start": "webpack serve"
+    "prod:build": "webpack --config webpack.prod.js"
   },
   "keywords": [],
   "author": "",
