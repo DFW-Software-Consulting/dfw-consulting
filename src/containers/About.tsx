@@ -19,7 +19,7 @@ const About = () => {
                 <p />
                 What sets us apart? Our unwavering commitment to staying ahead of the curve. We're constantly immersed in the realm of the 'latest.' Always exploring the newest technologies and conventions, we infuse innovation into every project we undertake.
                 <p />
-                At DFW Consulting, we're not just creating software – we're sculpting the future of digital excellence.
+                At DFW Software Consulting, we're not just creating software – we're sculpting the future of digital excellence.
                 <img id="ribbon" src={aboutImageTwo} alt="ribbon" />
             </div>
         </>

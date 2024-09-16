@@ -18,7 +18,7 @@ const Header = () => {
         const footer = document.getElementById('footer');
         /* to-do: manipulate class on hero image element to blur and unblur */
         // const hero = document.getElementsByClassName('hero')[0];
-        
+
         // helper function to toggle open and closed menu
         const toggleDisplay = () => {
             /*
@@ -109,7 +109,7 @@ const Header = () => {
                         }}
                     />
                     <div id="company-info">
-                        <div id="company-name">DFW CONSULTING</div>
+                        <div id="company-name">DFW SOFTWARE CONSULTING</div>
                         <div id="company-description">PROFESSIONAL SOFTWARE DEVELOPMENT SERVICES</div>
                     </div>
                     <svg id="hamburger" viewBox='0 0 100 100' width='30'>
@@ -125,21 +125,21 @@ const Header = () => {
                             onClick={(e) => {
                                 navigate('/Home')
                             }}
-                            >Home
+                        >Home
                         </div>
                         <div
                             id="tab-about"
                             onClick={(e) => {
                                 navigate('/About')
                             }}
-                            >About
+                        >About
                         </div>
                         <div
                             id="tab-team"
                             onClick={(e) => {
                                 navigate('/Team')
                             }}
-                            >Team
+                        >Team
                         </div>
                     </div>
                 </div>

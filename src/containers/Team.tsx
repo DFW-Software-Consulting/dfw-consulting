@@ -16,28 +16,28 @@ const Team = () => {
                 };
             });
         }, { threshold: .55 });
-    
+
         const hiddenElements = document.querySelectorAll('.hidden');
         hiddenElements.forEach((element) => observer.observe(element));
-    },[]);
+    }, []);
 
     return (
         <>
             <div className="hidden photo">
                 <img
-                        src={stafferAshley}
-                        alt="Jeremy Ashley"
+                    src={stafferAshley}
+                    alt="Jeremy Ashley"
                 />
                 <div className="photo-text">
                     <h1>Jeremy Ashley</h1>
-                    <h2>React JS Developer</h2>
+                    <h2>Full-stack Developer</h2>
                 </div>
             </div>
             <div className="hidden quote-card">"Crafting digital narratives that resonate."</div>
             <div className="hidden photo">
                 <img
-                        src={stafferTwo}
-                        alt="staffer2"
+                    src={stafferTwo}
+                    alt="staffer2"
                 />
                 <div className="photo-text">
                     <h1>Bryce Malmberg</h1>

@@ -9,7 +9,7 @@ import { Header, Footer } from '../components';
 // components
 const App = () => {
     const location = useLocation();
-   
+
     return (
         <>
             <div id="wrapper">
@@ -18,7 +18,7 @@ const App = () => {
                 </div>
                 {(location.pathname === '/Home' || location.pathname === '/') &&
                     <div className="hero">
-                        <div className="hero-title">DFW Consulting</div>
+                        <div className="hero-title">DFW Software Consulting</div>
                         <div className="hero-quote">Within every new idea is the power to change the world</div>
                     </div>
                 }

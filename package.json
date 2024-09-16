@@ -30,7 +30,7 @@
     "webpack-dev-server": "^4.15.1",
     "webpack-merge": "^5.10.0"
   },
-  "name": "dfw-consulting",
+  "name": "dfw-software-consulting",
   "version": "1.0.0",
   "description": "This is a Single Page Application website.",
   "scripts": {

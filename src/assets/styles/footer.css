@@ -1,7 +1,10 @@
+/* Styles for Footer */
+
 #footer-wrapper {
     min-height: fit-content;
     height: 3em;
-    font-size: var(--anomHeaderFont); 
+    font-size: var(--anomHeaderFont);
+    background-color: #f9f9f9;
 }
 
 #footer {
@@ -13,29 +16,41 @@
     color: #546C8F;
 }
 
-/* desktop */
-@media (width >= 1280px) {
+.footer-link {
+    color: #1e90ff;
+    margin-left: 8px;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries */
+
+/* Desktop */
+@media (min-width: 1280px) {
     #footer-wrapper {
         grid-column: span var(--deskCols);
     }
 }
 
-/* tablet */
-@media (width < 1280px) {
+/* Tablet */
+@media (max-width: 1280px) {
     #footer-wrapper {
         grid-column: span var(--tabletCols);
     }
 }
 
-/* mobile device */
-@media (width < 768px) {
+/* Mobile */
+@media (max-width: 768px) {
     #footer-wrapper {
         grid-column: span var(--mobileCols);
     }
 }
 
-/* anomalous devices */
-@media (width < 360px) {
+/* Anomalous Devices */
+@media (max-width: 360px) {
     #footer-wrapper {
         grid-column: span var(--anomCols);
     }
