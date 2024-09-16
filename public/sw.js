@@ -1,3 +1,0 @@
-/*
-    The service worker for the app
-*/
