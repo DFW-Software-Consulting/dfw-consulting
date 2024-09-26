@@ -5,6 +5,7 @@ import { default as Home } from './Home';
 import { default as About } from './About';
 import { default as Team } from './Team';
 import { Header, Footer } from '../components';
+import TemplatesList from './TemplatesList';
 
 // components
 const App = () => {
@@ -39,6 +40,10 @@ const App = () => {
                         <Route
                             path="/"
                             element={<Home />}
+                        />
+                        <Route
+                            path="/templates"
+                            element={<TemplatesList />}
                         />
                     </Routes>
                 </div>
