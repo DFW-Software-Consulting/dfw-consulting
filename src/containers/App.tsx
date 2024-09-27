@@ -17,12 +17,12 @@ const App = () => {
                 <div id="header-wrapper">
                     <Header />
                 </div>
-                {(location.pathname === '/Home' || location.pathname === '/') &&
+                {(location.pathname.toLowerCase() === '/home' || location.pathname === '/') && (
                     <div className="hero">
                         <div className="hero-title">DFW Software Consulting</div>
                         <div className="hero-quote">Within every new idea is the power to change the world</div>
                     </div>
-                }
+                )}
                 <div id="main">
                     <Routes>
                         <Route
@@ -32,10 +32,6 @@ const App = () => {
                         <Route
                             path="/team"
                             element={<Team />}
-                        />
-                        <Route
-                            path="/home"
-                            element={<Home />}
                         />
                         <Route
                             path="/"
