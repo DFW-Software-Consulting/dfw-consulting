@@ -24,6 +24,10 @@ const App = () => {
                     </div>
                 )}
                 <div id="main">
+                    <Route
+                        path="/templates"
+                        element={<TemplatesList />}
+                    />
                     <Routes>
                         <Route
                             path="/about"
@@ -36,10 +40,6 @@ const App = () => {
                         <Route
                             path="/"
                             element={<Home />}
-                        />
-                        <Route
-                            path="/templates"
-                            element={<TemplatesList />}
                         />
                     </Routes>
                 </div>
