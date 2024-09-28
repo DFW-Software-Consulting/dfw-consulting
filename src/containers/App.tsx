@@ -24,11 +24,11 @@ const App = () => {
                     </div>
                 )}
                 <div id="main">
-                    <Route
-                        path="/templates"
-                        element={<TemplatesList />}
-                    />
                     <Routes>
+                        <Route
+                            path="/templates"
+                            element={<TemplatesList />}
+                        />
                         <Route
                             path="/about"
                             element={<About />}
