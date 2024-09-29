@@ -51,5 +51,4 @@ const App = () => {
     )
 }
 
-// exports
 export default App;

@@ -1,6 +1,5 @@
 // imports
-import React from 'react';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../assets/styles/header.css';
 import logo from '../assets/images/dallas.png';
@@ -10,90 +9,46 @@ const Header = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        // useEffect variables
         const hamburger = document.getElementById('hamburger');
         const navbar = document.getElementsByClassName('navbar')[0];
         const headerWrapper = document.getElementById('header-wrapper');
         const main = document.getElementById('main');
         const footer = document.getElementById('footer');
-        /* to-do: manipulate class on hero image element to blur and unblur */
-        // const hero = document.getElementsByClassName('hero')[0];
 
-        // helper function to toggle open and closed menu
         const toggleDisplay = () => {
-            /*
-                here the menu is specifically being interacted with, so
-                open-menu and close-menu styled classes assigned to menu
-                items can be toggled on and off through normal behavior
-                of menu interaction
-            */
             navbar.classList.toggle('active');
-            // target blur effect for content in main and footer when menu opens
             main?.classList.toggle('active-menu');
             footer?.classList.toggle('active-menu');
-            /* to-do: blur hero image on menu open */
-            // hero.classList.toggle('active-menu');
         }
 
-        // helper function to close menu
         const toggleOff = () => {
-            // close menu if main, footer, or hero image are clicked
             if (navbar.classList.contains('active')) {
-                /*
-                    explicitly remove classes instead of toggling because
-                    otherwise a class that shouldn't remain on a menu item
-                    might still remain when not explicitly interacting
-                    with that menu item
-                */
                 main?.classList.remove('active-menu');
                 footer?.classList.remove('active-menu');
                 navbar.classList.remove('active');
                 hamburger?.classList.remove('expanded');
                 headerWrapper?.classList.remove('header-wrapper');
-                /* to-do: unblur hero image */
-                // hero.classList.remove('active-menu');
             };
         }
 
         hamburger?.addEventListener('click', () => {
-            // toggle display of line separating header from content of body if hamburger is clicked
             if (!navbar.classList.contains('active')) {
                 headerWrapper?.classList.add('header-wrapper');
-                // explicitly add instead of toggle
                 hamburger.classList.add('expanded');
             } else {
                 headerWrapper?.classList.remove('header-wrapper');
-                // explicitly remove instead of toggle
                 hamburger.classList.remove('expanded');
             }
-            // close and open menu when hamburger clicked
             toggleDisplay();
         });
 
-        main?.addEventListener('click', () => {
-            // close menu when main is clicked
-            toggleOff();
-        });
-
-        footer?.addEventListener('click', () => {
-            // close menu when footer is clicked
-            toggleOff();
-        });
-
-        /* to-do: blur hero image by passing location.pathname state in useEffect */
-        // hero.addEventListener('click', () => {
-        //     // close menu when hero image section is clicked
-        //     toggleOff();
-        // });
+        main?.addEventListener('click', toggleOff);
+        footer?.addEventListener('click', toggleOff);
 
         const menuItems = navbar.querySelectorAll<HTMLElement>('*');
         menuItems.forEach((menuItem) => {
-            menuItem.addEventListener('click', () => {
-                // close menu when a menu item is clicked
-                toggleOff();
-            })
+            menuItem.addEventListener('click', toggleOff);
         })
-
     }, []);
 
     return (
@@ -104,9 +59,7 @@ const Header = () => {
                         id="logo"
                         src={logo}
                         alt="logo"
-                        onClick={(e) => {
-                            navigate('/Home')
-                        }}
+                        onClick={() => navigate('/Home')}
                     />
                     <div id="company-info">
                         <div id="company-name">DFW SOFTWARE CONSULTING</div>
@@ -122,30 +75,29 @@ const Header = () => {
                     <div className="navbar">
                         <div
                             id="tab-home"
-                            onClick={(e) => {
-                                navigate('/Home')
-                            }}
+                            onClick={() => navigate('/Home')}
                         >Home
                         </div>
                         <div
                             id="tab-about"
-                            onClick={(e) => {
-                                navigate('/About')
-                            }}
+                            onClick={() => navigate('/About')}
                         >About
                         </div>
                         <div
                             id="tab-team"
-                            onClick={(e) => {
-                                navigate('/Team')
-                            }}
+                            onClick={() => navigate('/Team')}
                         >Team
+                        </div>
+                        <div
+                            id="tab-templates"
+                            onClick={() => navigate('/Templates')}
+                        >Templates
                         </div>
                     </div>
                 </div>
             </div>
         </>
-    )
+    );
 }
 
 export default Header;
