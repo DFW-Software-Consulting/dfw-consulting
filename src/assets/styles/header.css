@@ -1,5 +1,3 @@
-
-
 #header-wrapper {
     margin-bottom: 10px;
     height: fit-content;
@@ -95,6 +93,7 @@
 #hamburger.expanded .top {
     rotate: 45deg;
 }
+
 #hamburger.expanded .bottom {
     rotate: -45deg;
 }
@@ -132,13 +131,15 @@
 }
 
 /* desktop */
-@media (width >= 1280px) {
+@media (width >=1280px) {
     #header-wrapper {
         grid-column: span var(--deskCols);
     }
+
     #company-name {
         font-size: var(--deskHeaderFont);
     }
+
     #company-description {
         font-size: var(--anomHeaderFont);
     }
@@ -148,11 +149,13 @@
 @media (width < 1280px) {
     #header-wrapper {
         grid-column: span var(--tabletCols);
-        
+
     }
+
     #company-name {
         font-size: var(--tabletHeaderFont);
     }
+
     #company-description {
         font-size: var(--anomHeaderFont);
     }
@@ -163,9 +166,11 @@
     #header-wrapper {
         grid-column: span var(--mobileCols);
     }
+
     #company-name {
         font-size: var(--mobileHeaderFont);
     }
+
     #company-description {
         font-size: var(--anomHeaderFont);
     }
@@ -176,12 +181,15 @@
     #hamburger {
         display: flex;
     }
+
     #hamburger:hover {
-        cursor:pointer;
+        cursor: pointer;
     }
+
     #header {
         flex-direction: column;
     }
+
     .header-wrapper::after {
         /* this class is applied to the div with the
         header-wrapper id to attach a pseudo element
@@ -189,9 +197,11 @@
         when toggling open and closed the navbar menu*/
         display: none;
     }
+
     #header-right {
         margin-right: 0;
     }
+
     .navbar {
         display: none;
         flex-direction: column;
@@ -199,7 +209,8 @@
         justify-items: center;
         width: 100%;
     }
-    .navbar > * {
+
+    .navbar>* {
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -207,24 +218,30 @@
         width: 100%;
         border-bottom: 1px solid #546C8F;
     }
-    .navbar.active > * {
+
+    .navbar.active>* {
         animation: expandAnimation 0.3s forwards;
     }
+
     .active {
         /* javascript toggles the active class on the navbar
         when clicked, revealing the navbar items */
         display: flex;
     }
-    #main.active-menu, .hero.active-menu {
+
+    #main.active-menu,
+    .hero.active-menu {
         filter: blur(5px);
         user-select: none;
     }
+
     #main.active-menu .photo-text {
         pointer-events: none;
     }
+
     #footer.active-menu {
         filter: blur(5px);
-        background:rgba(0,0,0,0.08);
+        background: rgba(0, 0, 0, 0.08);
         user-select: none;
     }
 }
@@ -235,9 +252,11 @@
         grid-column: span var(--anomCols);
 
     }
+
     #company-name {
         font-size: var(--anomHeaderFont);
     }
+
     #company-description {
         font-size: var(--anomHeaderFont);
     }
@@ -247,6 +266,7 @@
     from {
         height: 0;
     }
+
     to {
         height: 2em;
     }

@@ -74,6 +74,12 @@ const Header = () => {
                 <div id="header-right">
                     <div className="navbar">
                         <div
+                            id="tab-templates invisibble"
+                            onClick={() => navigate('/Templates')}
+                        >
+                            {/* Templates */}
+                        </div>
+                        <div
                             id="tab-home"
                             onClick={() => navigate('/Home')}
                         >Home
@@ -87,11 +93,6 @@ const Header = () => {
                             id="tab-team"
                             onClick={() => navigate('/Team')}
                         >Team
-                        </div>
-                        <div
-                            id="tab-templates"
-                            onClick={() => navigate('/Templates')}
-                        >Templates
                         </div>
                     </div>
                 </div>
