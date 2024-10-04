@@ -21,9 +21,9 @@ const TemplateLink: React.FC<TemplateLinkProps> = ({ name, url }) => {
 const TemplatesList: React.FC = () => {
     // Example template data
     const templates = [
-        { name: 'Barber Shop Template', url: 'https://dfw-software-consulting.github.io/barberShop/' },
-        { name: 'Resturant Template', url: 'https://dfw-software-consulting.github.io/burgerSpot/' },
-        { name: 'Landscaping Template', url: 'https://example.com/portfolio' },
+        { name: 'Barber Shop Template', url: 'https://dfw-software-consulting.github.io/barberShop' },
+        { name: 'Resturant Template', url: 'https://dfw-software-consulting.github.io/burgerSpot' },
+        { name: 'Landscaping Template', url: 'https://dfwsc-lanscaping.netlify.app' },
     ];
 
     return (
