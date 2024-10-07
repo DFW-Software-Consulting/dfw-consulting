@@ -34,7 +34,7 @@ const Team = () => {
                 </div>
             </div>
             <div className="hidden quote-card">"Crafting digital narratives that resonate."</div>
-            <div className="hidden photo">
+            {/* <div className="hidden photo">
                 <img
                     src={stafferTwo}
                     alt="staffer2"
@@ -43,7 +43,7 @@ const Team = () => {
                     <h1>Bryce Malmberg</h1>
                     <h2>Full-stack Developer</h2>
                 </div>
-            </div>
+            </div> */}
             <div className="hidden quote-card">"Software development has been a lifelong passion of mine."</div>
             {/* <div className="hidden photo">
                 <img
